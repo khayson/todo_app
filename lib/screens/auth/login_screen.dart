@@ -31,12 +31,19 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: const Icon(Icons.arrow_back_ios),
-                padding: EdgeInsets.zero,
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () => Navigator.pop(context),
+                    icon: const Icon(Icons.arrow_back_ios),
+                    padding: EdgeInsets.zero,
+                  ),
+                  const Spacer(),
+                  const AppLogo(),
+                  const Spacer(),
+                  const SizedBox(width: 40), // To balance the back button width
+                ],
               ),
-              const Center(child: AppLogo()),
               const SizedBox(height: 40),
               Text(
                 'Welcome Back',
