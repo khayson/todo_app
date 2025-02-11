@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../auth/login_screen.dart';
+import '../auth/register_screen.dart';
 
 class WelcomeButtons extends StatelessWidget {
   final Color primaryColor;
@@ -40,8 +42,12 @@ class WelcomeButtons extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    // TODO: Implement get started action
-                    print('Get Started tapped');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterScreen(),
+                      ),
+                    );
                   },
                   borderRadius: BorderRadius.circular(16),
                   child: const Center(
@@ -74,8 +80,12 @@ class WelcomeButtons extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    // TODO: Implement login action
-                    print('Login tapped');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
                   },
                   borderRadius: BorderRadius.circular(16),
                   child: Center(
