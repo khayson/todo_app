@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register_screen.dart';
+import '../widgets/app_logo.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -35,7 +36,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 icon: const Icon(Icons.arrow_back_ios),
                 padding: EdgeInsets.zero,
               ),
-              const SizedBox(height: 20),
+              const Center(child: AppLogo()),
+              const SizedBox(height: 40),
               Text(
                 'Welcome Back',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(

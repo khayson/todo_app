@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
+import '../widgets/app_logo.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -40,7 +41,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 icon: const Icon(Icons.arrow_back_ios),
                 padding: EdgeInsets.zero,
               ),
-              const SizedBox(height: 20),
+              const Center(child: AppLogo()),
+              const SizedBox(height: 40),
               Text(
                 'Create Account',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
