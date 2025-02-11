@@ -17,13 +17,9 @@ class MascotAndDetailContainer extends StatelessWidget {
       child: Column(
         children: [
           const Spacer(),
-          CachedNetworkImage(
-            imageUrl: pageItem.assetImage,
+          Image.asset(
+            pageItem.assetImage,
             height: MediaQuery.of(context).size.height * 0.4,
-            placeholder: (context, url) => const Center(
-              child: CircularProgressIndicator(),
-            ),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
           const SizedBox(height: 50),
           Text(

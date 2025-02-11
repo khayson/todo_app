@@ -81,16 +81,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         id: 'feature_one',
         title: 'Discover & Connect',
         subtitle: 'Explore new possibilities and stay connected effortlessly.',
-        assetImage:
-            'https://raw.githubusercontent.com/Ronak99/majestic-ui-flutter/refs/heads/master/assets/discovery.svg',
+        assetImage: 'assets/images/welcome_screen_1.png',
         primaryColor: const Color(0xffff725e),
       ),
       PageItem(
         id: 'feature_two',
         title: 'Flexibility at Your Fingertips',
         subtitle: 'Use the app the way you want, anytime, anywhere.',
-        assetImage:
-            'https://raw.githubusercontent.com/Ronak99/majestic-ui-flutter/refs/heads/master/assets/fingertips.svg',
+        assetImage: 'assets/images/welcome_screen_2.png',
         primaryColor: const Color(0xff92e3a9),
       ),
       PageItem(
@@ -98,8 +96,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         title: 'Optimize & Grow',
         subtitle:
             'Leverage smart tools to enhance your experience and performance.',
-        assetImage:
-            'https://raw.githubusercontent.com/Ronak99/majestic-ui-flutter/refs/heads/master/assets/grow.svg',
+        assetImage: 'assets/images/welcome_screen_3.png',
         primaryColor: const Color(0xffba68c8),
       ),
       PageItem(
@@ -107,8 +104,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         title: 'Seamless Transactions',
         subtitle:
             'Manage your activities with ease and get things done faster.',
-        assetImage:
-            'https://raw.githubusercontent.com/Ronak99/majestic-ui-flutter/refs/heads/master/assets/money.svg',
+        assetImage: 'assets/images/welcome_screen_4.png',
         primaryColor: const Color(0xff407bfe),
       ),
     ];
