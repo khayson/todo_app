@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 class ActionButton extends StatelessWidget {
   final Color color;
-  final VoidCallback onPressed;
+  final VoidCallback onBackPressed;
+  final VoidCallback onForwardPressed;
   final bool isFirstPage;
 
   const ActionButton({
     super.key,
     required this.color,
-    required this.onPressed,
+    required this.onBackPressed,
+    required this.onForwardPressed,
     this.isFirstPage = false,
   });
 
@@ -18,7 +20,7 @@ class ActionButton extends StatelessWidget {
       children: [
         if (!isFirstPage)
           GestureDetector(
-            onTap: onPressed,
+            onTap: onBackPressed,
             child: Container(
               width: 56,
               height: 56,
@@ -34,7 +36,7 @@ class ActionButton extends StatelessWidget {
             ),
           ),
         GestureDetector(
-          onTap: onPressed,
+          onTap: onForwardPressed,
           child: Container(
             width: 56,
             height: 56,
