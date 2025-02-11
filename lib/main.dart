@@ -21,7 +21,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const WelcomeScreen(),
+      home: WelcomeScreen(
+        onActionButtonTap: () {
+          // TODO: Navigate to home page
+          print('Action button tapped');
+        },
+      ),
     );
   }
 }
