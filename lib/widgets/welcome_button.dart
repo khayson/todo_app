@@ -14,29 +14,35 @@ class WelcomeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 56,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: isPrimary ? const Color(0xFF2196F3) : Colors.white,
-          foregroundColor: isPrimary ? Colors.white : const Color(0xFF2196F3),
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-            side: BorderSide(
-              color: isPrimary ? Colors.transparent : const Color(0xFF2196F3),
-              width: 1.5,
+      decoration: BoxDecoration(
+        gradient: isPrimary
+            ? const LinearGradient(
+                colors: [Color(0xFF4A00E0), Color(0xFF8E2DE2)],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              )
+            : null,
+        borderRadius: BorderRadius.circular(16),
+        border: isPrimary
+            ? null
+            : Border.all(color: const Color(0xFF4A00E0), width: 2),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onPressed,
+          borderRadius: BorderRadius.circular(16),
+          child: Center(
+            child: Text(
+              text,
+              style: TextStyle(
+                color: isPrimary ? Colors.white : const Color(0xFF4A00E0),
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-        ),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: isPrimary ? Colors.white : const Color(0xFF2196F3),
           ),
         ),
       ),
