@@ -79,33 +79,31 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     final List<PageItem> pageItemList = [
       PageItem(
         id: 'feature_one',
-        title: 'Discover & Connect',
-        subtitle: 'Explore new possibilities and stay connected effortlessly.',
+        title: 'Organize Tasks',
+        subtitle: 'Create and manage your daily tasks with ease.',
         assetImage: 'assets/images/welcome_screen_1.png',
-        primaryColor: const Color(0xffff725e),
+        primaryColor: const Color.fromARGB(255, 94, 121, 255),
       ),
       PageItem(
         id: 'feature_two',
-        title: 'Flexibility at Your Fingertips',
-        subtitle: 'Use the app the way you want, anytime, anywhere.',
+        title: 'Set Priorities',
+        subtitle: 'Prioritize tasks and focus on what matters most.',
         assetImage: 'assets/images/welcome_screen_2.png',
         primaryColor: const Color(0xff92e3a9),
       ),
       PageItem(
         id: 'feature_three',
-        title: 'Optimize & Grow',
-        subtitle:
-            'Leverage smart tools to enhance your experience and performance.',
+        title: 'Track Progress',
+        subtitle: 'Monitor your achievements and stay motivated.',
         assetImage: 'assets/images/welcome_screen_3.png',
-        primaryColor: const Color(0xffba68c8),
+        primaryColor: const Color.fromARGB(255, 200, 200, 104),
       ),
       PageItem(
         id: 'feature_four',
-        title: 'Seamless Transactions',
-        subtitle:
-            'Manage your activities with ease and get things done faster.',
+        title: 'Stay Productive',
+        subtitle: 'Boost your productivity with smart reminders and deadlines.',
         assetImage: 'assets/images/welcome_screen_4.png',
-        primaryColor: const Color(0xff407bfe),
+        primaryColor: const Color.fromARGB(255, 111, 254, 64),
       ),
     ];
 
