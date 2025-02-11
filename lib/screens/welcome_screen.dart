@@ -8,6 +8,7 @@ import 'models/page_item.dart';
 import 'widgets/action_button.dart';
 import 'widgets/mascot_and_detail_container.dart';
 import 'widgets/pageview_bullets.dart';
+import 'widgets/welcome_buttons.dart';
 
 const _splashScreenBgAnimationDuration = 800;
 
@@ -141,16 +142,28 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       controller: _pageController,
                       children: pageItemList
                           .map(
-                            (e) => MascotAndDetailContainer(
-                              pageItem: e,
+                            (e) => Column(
+                              children: [
+                                Expanded(
+                                  child: MascotAndDetailContainer(
+                                    pageItem: e,
+                                  ),
+                                ),
+                                WelcomeButtons(
+                                  primaryColor: e.primaryColor,
+                                ),
+                              ],
                             ),
                           )
                           .toList(),
                     ),
                   ),
                   Container(
-                    margin:
-                        const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+                    margin: const EdgeInsets.only(
+                      left: 25,
+                      right: 25,
+                      bottom: 25,
+                    ),
                     child: Row(
                       children: [
                         PageViewBullets(
@@ -185,7 +198,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ],
               ),
-              const AppLogo()
+              const AppLogo(),
             ],
           ),
         ),
