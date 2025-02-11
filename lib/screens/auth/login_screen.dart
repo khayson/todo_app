@@ -30,6 +30,11 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: const Icon(Icons.arrow_back_ios),
+                padding: EdgeInsets.zero,
+              ),
               const SizedBox(height: 20),
               Text(
                 'Welcome Back',
@@ -148,7 +153,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         const Text("Don't have an account?"),
                         TextButton(
                           onPressed: () {
-                            // TODO: Navigate to register screen
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const RegisterScreen(),
+                              ),
+                            );
                           },
                           child: const Text('Sign Up'),
                         ),
