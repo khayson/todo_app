@@ -161,12 +161,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         const Spacer(),
                         ActionButton(
                           color: pageItemList[_currentPage].primaryColor,
+                          isFirstPage: _currentPage == 0,
                           onPressed: () async {
-                            if (_currentPage == 3) {
+                            if (_currentPage == 0) {
+                              _pageController.nextPage(
+                                duration: const Duration(milliseconds: 300),
+                                curve: Curves.easeInOut,
+                              );
+                            } else if (_currentPage == 3) {
                               await _setHasShownWelcomeScreenToTrue();
                               widget.onActionButtonTap();
                             } else {
-                              _pageController.nextPage(
+                              _pageController.previousPage(
                                 duration: const Duration(milliseconds: 300),
                                 curve: Curves.easeInOut,
                               );
