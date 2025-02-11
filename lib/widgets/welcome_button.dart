@@ -14,31 +14,22 @@ class WelcomeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 280,
-      height: 55,
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      decoration: BoxDecoration(
-        gradient: isPrimary
-            ? const LinearGradient(
-                colors: [Color(0xFF2196F3), Color(0xFF1976D2)],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-              )
-            : null,
-        borderRadius: BorderRadius.circular(30),
-        border: isPrimary ? null : Border.all(color: const Color(0xFF2196F3)),
-      ),
+    return SizedBox(
+      height: 56,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: isPrimary ? Colors.transparent : Colors.white,
+          backgroundColor: isPrimary ? const Color(0xFF2196F3) : Colors.white,
           foregroundColor: isPrimary ? Colors.white : const Color(0xFF2196F3),
-          elevation: isPrimary ? 0 : 0,
+          elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(16),
+            side: BorderSide(
+              color: isPrimary ? Colors.transparent : const Color(0xFF2196F3),
+              width: 1.5,
+            ),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
         ),
         child: Text(
           text,

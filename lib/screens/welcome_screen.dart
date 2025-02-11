@@ -11,48 +11,83 @@ class WelcomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.all(24),
           child: Column(
             children: [
-              const Spacer(flex: 2),
-              // App Logo
-              const Icon(
-                Icons.check_circle_outline,
-                size: 100,
-                color: AppTheme.primaryColor,
+              const Spacer(),
+              // Welcome Illustration
+              Container(
+                width: double.infinity,
+                height: 240,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFE3F2FD), // Light blue background
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
+                child: const Center(
+                  child: Icon(
+                    Icons.check_circle_outline,
+                    size: 120,
+                    color: AppTheme.primaryColor,
+                  ),
+                ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 48),
 
-              // Welcome Text
-              const Text(
-                'Welcome to Todo App',
-                style: AppTheme.titleStyle,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 12),
-              const Text(
-                'Organize your tasks efficiently',
-                style: AppTheme.subtitleStyle,
-                textAlign: TextAlign.center,
-              ),
-              const Spacer(flex: 2),
-
-              // Action Buttons
-              WelcomeButton(
-                text: 'Get Started',
-                onPressed: () {
-                  // TODO: Navigate to tasks screen
-                },
-                isPrimary: true,
-              ),
-              WelcomeButton(
-                text: 'Sign In',
-                onPressed: () {
-                  // TODO: Navigate to sign in screen
-                },
-                isPrimary: false,
+              // Welcome Text Section
+              const Column(
+                children: [
+                  Text(
+                    'Task Management',
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'Organize your tasks and\nboost your productivity',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black54,
+                      height: 1.5,
+                    ),
+                  ),
+                ],
               ),
               const Spacer(),
+
+              // Action Buttons in Row
+              Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: WelcomeButton(
+                        text: 'Sign Up',
+                        onPressed: () {
+                          // TODO: Navigate to sign up screen
+                        },
+                        isPrimary: true,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: WelcomeButton(
+                        text: 'Login',
+                        onPressed: () {
+                          // TODO: Navigate to login screen
+                        },
+                        isPrimary: false,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
             ],
           ),
         ),
